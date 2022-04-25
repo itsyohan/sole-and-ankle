@@ -31,10 +31,31 @@ const ShoeCard = ({
       ? 'new-release'
       : 'default'
 
+  const tagContent = {
+    'on-sale': 'Sale',
+    'new-release': 'Just released!',
+  }
+
+  const tagStyles = {
+    'on-sale': {
+      backgroundColor: 'hsla(340, 65%, 47%, 1)',
+
+    },
+    'new-release': {
+      backgroundColor: 'hsla(240, 60%, 63%, 1)'
+    },
+    'default': {
+      display: 'none'
+    },
+  }
+
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
+          <ImageTag style={tagStyles[variant]}>
+            {tagContent[variant]}
+          </ImageTag>
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Spacer size={12} />
@@ -52,7 +73,6 @@ const ShoeCard = ({
 
 const Link = styled.a`
   flex: 1 1 340px;
-  max-width: 340px;
   text-decoration: none;
   color: inherit;
 `;
@@ -60,12 +80,23 @@ const Link = styled.a`
 const Wrapper = styled.article`
 `;
 
+const ImageTag = styled.div`
+  position: absolute;
+  top: 12px;
+  right: -5px;
+  padding: 7px 11px;
+  color: white;
+  font-weight: 700;
+  font-size: ${14/16}rem;
+`
+
 const ImageWrapper = styled.div`
   position: relative;
 `;
 
 const Image = styled.img`
   width: 100%;
+  border-radius: 16px 16px 4px 4px;
 `;
 
 const Row = styled.div`
