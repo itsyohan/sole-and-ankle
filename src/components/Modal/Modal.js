@@ -8,7 +8,7 @@ const Modal = (props) => {
     <Wrapper isOpen={props.isOpen}>
       <Backdrop onClick={() => props.toggleModal(false)} />
       <ContentWrapper>
-        {props.isOpen}
+        <CancelButton onClick={() => props.toggleModal(false)} >&#10005;</CancelButton>
         {props.children}
       </ContentWrapper>
     </Wrapper>
@@ -38,16 +38,27 @@ const ContentWrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  margin-top: 36px;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 500px;
-  min-height: 500px;
-  max-width: 500px;
-  max-height: 500px;
   background-color: white;
-  border-radius: 10px;
-  padding: 20px 10px;
+  padding: 3rem;
+  overflow: auto;
+
+  @media (min-width: 550px) {
+    margin-top: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 500px;
+    min-height: 500px;
+    max-width: 700px;
+    max-height: 700px;
+    border-radius: 10px;
+  }
+`
+
+const CancelButton = styled.span`
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  cursor: pointer;
 `
 
 export default Modal;

@@ -14,7 +14,38 @@ const ShoeGrid = () => {
         <ShoeCard key={shoe.slug} {...shoe} toggleModal={toggleModal} />
       ))}
       <Modal isOpen={isModalOpen} toggleModal={toggleModal}>
-        This is the information about shoes
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
+        <p>This is the information about shoes</p>
       </ Modal>
     </Wrapper>
   );
