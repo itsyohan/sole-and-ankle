@@ -13,6 +13,7 @@ const ShoeCard = ({
   salePrice,
   releaseDate,
   numOfColors,
+  toggleModal,
 }) => {
   // There are 3 variants possible, based on the props:
   //   - new-release
@@ -50,7 +51,10 @@ const ShoeCard = ({
   }
 
   return (
-    <Link href={`/shoe/${slug}`}>
+    <Link href={`/shoe/${slug}`} onClick={(e) => {
+      e.preventDefault();
+      toggleModal(true)
+    }}>
       <Wrapper>
         <ImageWrapper>
           <ImageTag style={tagStyles[variant]}>

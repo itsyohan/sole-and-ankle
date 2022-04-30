@@ -3,13 +3,19 @@ import styled from 'styled-components/macro';
 
 import SHOES from '../../data';
 import ShoeCard from '../ShoeCard';
+import Modal from '../Modal';
 
 const ShoeGrid = () => {
+  const [isModalOpen, toggleModal] = React.useState(false);
+
   return (
     <Wrapper>
       {SHOES.map((shoe) => (
-        <ShoeCard key={shoe.slug} {...shoe} />
+        <ShoeCard key={shoe.slug} {...shoe} toggleModal={toggleModal} />
       ))}
+      <Modal isOpen={isModalOpen} toggleModal={toggleModal}>
+        This is the information about shoes
+      </ Modal>
     </Wrapper>
   );
 };
